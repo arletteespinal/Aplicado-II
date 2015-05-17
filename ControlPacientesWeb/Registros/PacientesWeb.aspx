@@ -31,6 +31,17 @@
             width: 503px;
             height: 23px;
         }
+        .auto-style11 {
+          height: 42px;
+        }
+        .auto-style12 {
+          width: 96px;
+          height: 42px;
+        }
+        .auto-style13 {
+          width: 1097px;
+          height: 42px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -41,9 +52,9 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style4" colspan="13">&nbsp;</td>
+            <td class="auto-style9"></td>
+            <td class="auto-style9"></td>
+            <td class="auto-style10" colspan="13"></td>
         </tr>
         <tr>
             <td class="auto-style9"></td>
@@ -67,6 +78,7 @@
             <td class="auto-style1">Nombres:</td>
             <td class="auto-style3" colspan="14">
                 <asp:TextBox ID="NombresTextBox" runat="server" Width="324px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="El campo &quot;Nombres&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -75,35 +87,38 @@
                 :</td>
             <td class="auto-style3" colspan="14">
                 <asp:TextBox ID="ApellidosTextBox" runat="server" Width="321px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ApellidosTextBox" ErrorMessage="El campo &quot;Apellidos&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">
+            <td class="auto-style11">
                 <asp:Label ID="Label2" runat="server" Text="Fecha Nacimiento"></asp:Label>
                 :</td>
-            <td class="auto-style3">
+            <td class="auto-style11">
                 <asp:TextBox ID="FechaNacimientoTextBox" runat="server" TextMode="Date"></asp:TextBox>
             </td>
-            <td class="auto-style5">Genero:</td>
-            <td class="auto-style5" colspan="5">
+            <td class="auto-style12">Genero:</td>
+            <td class="auto-style12" colspan="5">
                 <asp:DropDownList ID="GeneroDropDownList" runat="server">
                     <asp:ListItem Value="0">Femenino</asp:ListItem>
                     <asp:ListItem Value="1">Masculino</asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td class="auto-style5">&nbsp;</td>
-            <td class="auto-style5" colspan="3">&nbsp;</td>
-            <td class="auto-style8" colspan="2">
-                &nbsp;</td>
-            <td class="auto-style8">
-                &nbsp;</td>
+            <td class="auto-style12"></td>
+            <td class="auto-style12" colspan="3"></td>
+            <td class="auto-style13" colspan="2">
+                </td>
+            <td class="auto-style13">
+                </td>
         </tr>
         <tr>
             <td class="auto-style1">C<span id="mt22" class="sentence" data-guid="5ba524387c043f100d3420929437849b" data-source="If you have not already done so, open your solution, (Keyboard: Ctrl + Shift + O) and then open Solution Explorer (Keyboard: Ctrl + Alt + L)." xml:space="preserve">é</span>dula:</td>
             <td class="auto-style3">
                 <asp:TextBox ID="CedulaTextBox" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style4" colspan="13">&nbsp;</td>
+            <td class="auto-style4" colspan="13">
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="CedulaTextBox" ErrorMessage="Cédula no valida" ForeColor="#CC0000" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{7}-\d{1}">*</asp:RegularExpressionValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style1">Celular:</td>

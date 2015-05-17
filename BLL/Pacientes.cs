@@ -56,7 +56,7 @@ namespace BLL
 
         public bool Modificar()
         {
-            return conexion.EjecutarDB("update Pacientes set  FechaIngreso='" + this.FechaIngreso.ToString("MM/dd/yyyy") + "', Nombres='" + this.Nombres + "', Apellidos='" + this.Apellidos + "', Cedula='" + this.Cedula + "', FechaNacimiento='" + this.FechaNacimiento.ToString("MM/dd/yyyy") + "', Genero='" + this.Genero + "',Celular='" + this.Celular + "',Direccion='" + "',Telefono='" + this.Telefono + this.Direccion + "',Ocupacion='" + this.Ocupacion + "' where IdPaciente='" + this.IdPaciente + "'");
+            return conexion.EjecutarDB("update Pacientes set  FechaIngreso='" + this.FechaIngreso.ToString("MM/dd/yyyy") + "', Nombres='" + this.Nombres + "', Apellidos='" + this.Apellidos + "', Cedula='" + this.Cedula + "', FechaNacimiento='" + this.FechaNacimiento.ToString("MM/dd/yyyy") + "', Genero='" + this.Genero + "',Celular='" + this.Celular + "',Telefono='" + this.Telefono + "',Direccion='" + this.Direccion + "',Ocupacion='" + this.Ocupacion + "' where IdPaciente='" + this.IdPaciente + "'");
 
         }
 

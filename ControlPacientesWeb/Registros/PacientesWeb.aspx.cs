@@ -11,6 +11,7 @@ namespace ControlPacientesWeb.Registros
     public partial class PacientesWeb : System.Web.UI.Page
     {
         private Pacientes pacientes = new Pacientes();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -43,7 +44,7 @@ namespace ControlPacientesWeb.Registros
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
             int genero = 0;
-            int.TryParse(GeneroDropDownList.SelectedValue,out genero);
+            int.TryParse(GeneroDropDownList.SelectedValue, out genero);
             pacientes.Genero = genero;
             pacientes.Nombres = NombresTextBox.Text;
             pacientes.Apellidos = ApellidosTextBox.Text;
@@ -54,19 +55,19 @@ namespace ControlPacientesWeb.Registros
             pacientes.Direccion = DireccionTextBox.Text;
             pacientes.FechaIngreso = DateTime.Now;
             pacientes.FechaNacimiento = DateTime.Now;
-           
-            
+
+
             if (CodigoTextBox.Text == string.Empty)
             {
                 if (pacientes.Insertar())
                 {
-
+                   
                 }
             }
             else
             {
                 int id = 0;
-                int.TryParse(CodigoTextBox.Text,out id);
+                int.TryParse(CodigoTextBox.Text, out id);
                 pacientes.IdPaciente = id;
                 if (pacientes.Modificar())
                 {
@@ -85,5 +86,5 @@ namespace ControlPacientesWeb.Registros
 
             }
         }
-    }
+}
 }
