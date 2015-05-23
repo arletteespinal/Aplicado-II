@@ -46,7 +46,7 @@ namespace ControlPacientesWeb.Registros
             {
                 if (sistema.Insertar())
                 {
-
+                    
                 }
             }
             else
@@ -60,6 +60,7 @@ namespace ControlPacientesWeb.Registros
                 }
             }
         }
+       
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {

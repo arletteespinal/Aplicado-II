@@ -100,5 +100,11 @@ namespace BLL
             return ConexionDB.BuscarDb("Select " + Campos + " from Pacientes where " + FiltroWhere);
         }
 
+        public DataTable NombreCompleto()
+        {
+            Conexion ConexionDB = new Conexion();
+            return ConexionDB.BuscarDb("Select IdPaciente as Codigo, Nombres+' '+Apellidos as NombreCompleto from Pacientes ");
+        }
+
     }
 }
