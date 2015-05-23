@@ -765,6 +765,7 @@ h3 {
 
 h1 {
   font-size: 38.5px;
+    text-align: center;
 }
 
 h2 {
@@ -1091,7 +1092,6 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 20px;
   padding: 4px 6px;
   margin-bottom: 10px;
   font-size: 14px;

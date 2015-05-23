@@ -16,10 +16,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
-            <td class="auto-style2">
+            <td class="auto-style2" colspan="22">
                 <h1></h1>
-            </td>
-            <td colspan="21" class="auto-style2">
                 <h1><strong>Registo de Sistemas Fisiologico</strong></h1>
             </td>
             <td class="auto-style3"></td>
@@ -28,7 +26,7 @@
             <td>&nbsp;</td>
             <td>Codigo:</td>
             <td>
-                <asp:TextBox ID="CodigoTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="CodigoTextBox" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
             <td colspan="3">&nbsp;</td>
