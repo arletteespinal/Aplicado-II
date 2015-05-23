@@ -58,7 +58,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Consultas\CPacientesWeb.aspx" />
+    <Content Include="Consultas\SistemasFisiologicoWeb.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Registros\PacientesWeb.aspx" />
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Registros\RevisionPacienteWeb.aspx" />
+    <Content Include="Registros\SistemasFisiologicoWeb.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +81,20 @@
     <Compile Include="Consultas\CPacientesWeb.aspx.designer.cs">
       <DependentUpon>CPacientesWeb.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\SistemasFisiologicoWeb.aspx.cs">
+      <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\SistemasFisiologicoWeb.aspx.designer.cs">
+      <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registros\PacientesWeb.aspx.cs">
       <DependentUpon>PacientesWeb.aspx</DependentUpon>
@@ -76,6 +102,20 @@
     </Compile>
     <Compile Include="Registros\PacientesWeb.aspx.designer.cs">
       <DependentUpon>PacientesWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RevisionPacienteWeb.aspx.cs">
+      <DependentUpon>RevisionPacienteWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RevisionPacienteWeb.aspx.designer.cs">
+      <DependentUpon>RevisionPacienteWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\SistemasFisiologicoWeb.aspx.cs">
+      <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\SistemasFisiologicoWeb.aspx.designer.cs">
+      <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -87,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
+    <None Include="Properties\PublishProfiles\arletteespinal.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -100,6 +141,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

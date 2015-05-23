@@ -68,15 +68,17 @@
             </td>
             <td class="auto-style7" colspan="2">Fecha Ingreso:</td>
             <td class="auto-style7" colspan="2">
-                <asp:TextBox ID="FechaIngresoTextBox" runat="server" style="margin-left: 0px" TextMode="Date"></asp:TextBox>
+                <asp:TextBox ID="FechaIngresoTextBox" runat="server" style="margin-left: 0px" ></asp:TextBox>
             </td>
             <td class="auto-style7" colspan="5">&nbsp;</td>
             <td class="auto-style4" colspan="2">&nbsp;</td>
-            <td class="auto-style4" colspan="2">&nbsp;</td>
+            <td class="auto-style4" colspan="2">&nbsp;
+                <input type="text" id="datepicker"/>
+            </td>
         </tr>
         <tr>
-            <td class="auto-style1">Nombres:</td>
-            <td class="auto-style3" colspan="14">
+            <td class="auto-style11">Nombres:</td>
+            <td class="auto-style11" colspan="14">
                 <asp:TextBox ID="NombresTextBox" runat="server" Width="324px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="El campo &quot;Nombres&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
             </td>

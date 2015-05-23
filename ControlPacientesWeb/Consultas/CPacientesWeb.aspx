@@ -29,7 +29,7 @@
             <td colspan="7" class="auto-style1"></td>
         </tr>
         <tr>
-            <td colspan="7" class="auto-style1">&nbsp;</td>
+            <td colspan="7" class="auto-style1"></td>
         </tr>
         <tr>
             <td colspan="5">Filtrar por:</td>

@@ -21,6 +21,15 @@ namespace ControlPacientesWeb.Registros
                 if (pacientes.Buscar(id))
                 {
                     Buscar();
+                    
+                }
+                if (CodigoTextBox.Text == string.Empty)
+                {
+                    EliminarButton.Enabled = false;
+                }
+                else
+                {
+                    EliminarButton.Enabled = true;
                 }
             }
         }
@@ -30,7 +39,7 @@ namespace ControlPacientesWeb.Registros
             CodigoTextBox.Text = pacientes.IdPaciente.ToString();
             NombresTextBox.Text = pacientes.Nombres;
             ApellidosTextBox.Text = pacientes.Apellidos;
-            FechaIngresoTextBox.Text = pacientes.FechaIngreso.ToString("MM/dd/yyyy");
+            //FechaIngresoTextBox.Text = pacientes.FechaIngreso.ToString("MM/dd/yyyy");
             FechaNacimientoTextBox.Text = pacientes.FechaNacimiento.ToString("MM/dd/yyyy");
             GeneroDropDownList.SelectedIndex = pacientes.Genero;
             TelefonoTextBox.Text = pacientes.Telefono;
