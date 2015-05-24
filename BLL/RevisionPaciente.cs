@@ -54,8 +54,26 @@ namespace BLL
 
         public bool EliminarRevisionDetalle()
         {
-            return conexion.EjecutarDB("delete from RevisionDetalle where IdRevisionDetalle='" + this.IdRevisionDetalle.ToString() + "'");
+            return conexion.EjecutarDB("delete from RevisionDetalle where IdRevisionPaciente='" + this.IdRevision.ToString() + "'");
         }
+
+        public bool BuscarIdRevision()
+        {
+            bool Retorno = false;
+            DataTable dt = new DataTable();
+
+            dt = conexion.BuscarDb("select Max(IdRevision) as IdRevision from RevisionPaciente");
+
+            if (dt.Rows.Count > 0)
+            {
+                Retorno = true;
+                IdRevision = (int)dt.Rows[0]["IdRevision"];
+
+            }
+
+            return Retorno;
+        }
+
 
         public bool BuscarRevision(int id)
         {

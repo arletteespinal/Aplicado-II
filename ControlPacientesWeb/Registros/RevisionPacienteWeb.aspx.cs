@@ -40,7 +40,6 @@ namespace ControlPacientesWeb.Registros
             if (Session["datos"] == null)
             {
                 datos = new DataTable();
-                datos.Columns.Add(new DataColumn("Codigo"));
                 datos.Columns.Add(new DataColumn("CodigoSistema"));
                 datos.Columns.Add(new DataColumn("Sistema"));
                 datos.Columns.Add(new DataColumn("Estado"));
@@ -66,13 +65,60 @@ namespace ControlPacientesWeb.Registros
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
 
-          
-        }
-        
+            revision.Fecha = DateTime.Now;
+            revision.IdPaciente =Convert.ToInt32( PacientesDropDownList.SelectedValue);
+            revision.IdSistema = 1;
+            revision.Estado = "hola";
+            revision.IdSistema = 1;
+            revision.Estado = "no se";
 
-        protected void QuitarButton_Click(object sender, EventArgs e)
-        {
-            
+            if (CodigoTextBox.Text == string.Empty)
+            {
+                if (revision.InsertarRevision())
+                {
+                    if (revision.BuscarIdRevision())
+                    {
+                        CodigoTextBox.Text = revision.IdRevision.ToString();
+                    }
+                    DataTable datos = Session["datos"] as DataTable;
+                    foreach (DataRow row in datos.Rows)
+                    {
+
+                        revision.IdSistema = int.Parse(row["CodigoSistema"].ToString());
+                        revision.Estado = row["Estado"].ToString();
+                        revision.InsertarRevisionDetalle();
+                    }
+                }
+            }
+            else
+            {
+                int id = 0;
+                int.TryParse(CodigoTextBox.Text, out id);
+                revision.IdSistema = id;
+                if (revision.ModificarRevision())
+                {
+
+                    DataTable datos = Session["datos"] as DataTable;
+                    foreach (DataRow row in datos.Rows)
+                    {
+                        revision.IdSistema = int.Parse(row["CodigoSistema"].ToString());
+                        revision.Estado = row["Estado"].ToString();
+                        revision.ModificarRevisionDetalle();
+                    }
+                }
+            }
         }
+
+        protected void EliminarButton_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            int.TryParse(CodigoTextBox.Text, out id);
+            revision.IdRevision = id;
+            if (revision.EliminarRevisionDetalle())
+            {
+                revision.EliminarRevision();
+            }
+        }
+
     }
 }

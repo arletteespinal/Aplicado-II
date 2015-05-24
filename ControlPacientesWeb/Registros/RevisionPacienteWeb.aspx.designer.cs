@@ -67,15 +67,6 @@ namespace ControlPacientesWeb.Registros {
         protected global::System.Web.UI.WebControls.Button AgregarButton;
         
         /// <summary>
-        /// QuitarButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button QuitarButton;
-        
-        /// <summary>
         /// DetalleGridView control.
         /// </summary>
         /// <remarks>

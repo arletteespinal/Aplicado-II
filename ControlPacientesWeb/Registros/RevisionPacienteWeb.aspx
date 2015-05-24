@@ -116,7 +116,6 @@
                 
 
                 <asp:Button ID="AgregarButton" runat="server" Text="Agregar" OnClick="AgregarButton_Click" />
-                <asp:Button ID="QuitarButton" runat="server" Text="Quitar" OnClick="QuitarButton_Click" />
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -133,9 +132,8 @@
             <td colspan="16">
                 
 
-                <asp:GridView ID="DetalleGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" Height="137px" Width="637px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" ForeColor="Black" Enabled="False" OnSelectedIndexChanged="Page_Load">
+                <asp:GridView ID="DetalleGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" Height="137px" Width="637px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" ForeColor="Black" Enabled="False">
                     <Columns>
-                        <asp:BoundField DataField="Codigo" HeaderText="Codigo" />
                         <asp:BoundField DataField="CodigoSistema" HeaderText="CodigoSistema" />
                         <asp:BoundField DataField="Sistema" HeaderText="Sistema" />
                         <asp:BoundField DataField="Estado" HeaderText="Estado" />
@@ -169,7 +167,7 @@
 
                 <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
                 <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
-                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" />
+                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" OnClick="EliminarButton_Click" />
              
             </td>
             <td>&nbsp;</td>

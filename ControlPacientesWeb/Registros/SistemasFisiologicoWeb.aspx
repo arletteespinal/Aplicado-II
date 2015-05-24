@@ -74,6 +74,7 @@
             </td>
             <td class="auto-style1" colspan="2">
                 <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
+
             </td>
             <td class="auto-style1" colspan="3">
                 <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" Enabled="False" OnClick="EliminarButton_Click" />

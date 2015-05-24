@@ -6,7 +6,6 @@
 <head runat="server">
     <title></title>
     <link href="Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
-      
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -52,8 +51,6 @@
 
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    
-    
      <div class="container">
         <br />
         <br />
