@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Consultas\CPacientesWeb.aspx" />
-    <Content Include="Consultas\SistemasFisiologicoWeb.aspx" />
+    <Content Include="Consultas\CRevisionDetalleWeb.aspx" />
+    <Content Include="Consultas\CRevisionPacientesWeb.aspx" />
+    <Content Include="Consultas\CSistemasFisiologicoWeb.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Registros\PacientesWeb.aspx" />
     <Content Include="Content\css\bootstrap-responsive.css" />
@@ -69,6 +71,9 @@
     <Content Include="Registros\SistemasFisiologicoWeb.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Web.config" />
@@ -81,12 +86,26 @@
     <Compile Include="Consultas\CPacientesWeb.aspx.designer.cs">
       <DependentUpon>CPacientesWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\SistemasFisiologicoWeb.aspx.cs">
-      <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
+    <Compile Include="Consultas\CRevisionDetalleWeb.aspx.cs">
+      <DependentUpon>CRevisionDetalleWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\SistemasFisiologicoWeb.aspx.designer.cs">
-      <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
+    <Compile Include="Consultas\CRevisionDetalleWeb.aspx.designer.cs">
+      <DependentUpon>CRevisionDetalleWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\CRevisionPacientesWeb.aspx.cs">
+      <DependentUpon>CRevisionPacientesWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\CRevisionPacientesWeb.aspx.designer.cs">
+      <DependentUpon>CRevisionPacientesWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\CSistemasFisiologicoWeb.aspx.cs">
+      <DependentUpon>CSistemasFisiologicoWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\CSistemasFisiologicoWeb.aspx.designer.cs">
+      <DependentUpon>CSistemasFisiologicoWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
