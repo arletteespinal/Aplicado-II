@@ -2,7 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="DetalleGridView" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+    <table style="width:100%;">
+        <tr>
+            <td class="text-center" colspan="3">
+                <h1><strong>Consulta de Detalles de Revision de Pacientes</strong></h1>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                 <asp:GridView ID="DetalleGridView" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
@@ -13,5 +22,15 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
-    <asp:HyperLink ID="AtrasHyperLink" runat="server" NavigateUrl="~/Consultas/CRevisionPacientesWeb.aspx"><< atras </asp:HyperLink>
-</asp:Content>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <asp:HyperLink ID="AtrasHyperLink" runat="server" NavigateUrl="~/Consultas/CRevisionPacientesWeb.aspx"><< atras </asp:HyperLink>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+   </asp:Content>
