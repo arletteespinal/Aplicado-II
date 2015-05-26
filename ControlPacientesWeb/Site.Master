@@ -22,7 +22,6 @@
 <body>
     
         <form id="form1" runat="server">
-   
 <div class="navbar">
     <div class="navbar-inner">
         <div class="container">
@@ -50,6 +49,7 @@
                             <asp:MenuItem Text="Sistemas Fisiologicos" ToolTip="Sistemas Fisiologicos" NavigateUrl="Consultas/CSistemasFisiologicoWeb.aspx" />
                             <asp:MenuItem Text="Revision Pacientes" ToolTip="Revision Pacientes" NavigateUrl="~/Consultas/CRevisionPacientesWeb.aspx" />
                         </asp:MenuItem>
+                        <asp:MenuItem Text="Acerca de" ToolTip="Acerca de" NavigateUrl="~/AcercaDe.aspx"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

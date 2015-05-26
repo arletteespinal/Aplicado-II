@@ -97,19 +97,22 @@ namespace ControlPacientesWeb.Registros
 
             if (CodigoTextBox.Text == string.Empty)
             {
-                if (revision.InsertarRevision())
+                if (!IsPostBack)
                 {
-                    if (revision.BuscarIdRevision())
+                    if (revision.InsertarRevision())
                     {
-                        CodigoTextBox.Text = revision.IdRevision.ToString();
-                    }
-                    DataTable datos = Session["datos"] as DataTable;
-                    foreach (DataRow row in datos.Rows)
-                    {
+                        if (revision.BuscarIdRevision())
+                        {
+                            CodigoTextBox.Text = revision.IdRevision.ToString();
+                        }
+                        DataTable datos = Session["datos"] as DataTable;
+                        foreach (DataRow row in datos.Rows)
+                        {
 
-                        revision.IdSistema = int.Parse(row["CodigoSistema"].ToString());
-                        revision.Estado = row["Estado"].ToString();
-                        revision.InsertarRevisionDetalle();
+                            revision.IdSistema = int.Parse(row["CodigoSistema"].ToString());
+                            revision.Estado = row["Estado"].ToString();
+                            revision.InsertarRevisionDetalle();
+                        }
                     }
                 }
             }
