@@ -97,8 +97,7 @@ namespace ControlPacientesWeb.Registros
 
             if (CodigoTextBox.Text == string.Empty)
             {
-                if (!IsPostBack)
-                {
+                
                     if (revision.InsertarRevision())
                     {
                         if (revision.BuscarIdRevision())
@@ -114,7 +113,7 @@ namespace ControlPacientesWeb.Registros
                             revision.InsertarRevisionDetalle();
                         }
                     }
-                }
+                
             }
             else
             {

@@ -9,6 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
-         <p>
-        <img alt="" class="auto-style1" src="Imagenes/RevisionPacientes.jpg" /></p></p>
+         <h1>
+             <asp:Label ID="Label1" runat="server" Text="Control de Pacientes" style="font-weight: 700; text-align: center"></asp:Label>
+        <img alt="" class="auto-style1" src="Imagenes/RevisionPacientes.jpg" /></h1></p>
 </asp:Content>

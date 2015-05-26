@@ -68,12 +68,11 @@
             </td>
             <td class="auto-style7" colspan="2">Fecha Ingreso:</td>
             <td class="auto-style7" colspan="2">
-                <asp:TextBox ID="FechaIngresoTextBox" runat="server" style="margin-left: 0px" ></asp:TextBox>
+                <asp:TextBox ID="FechaIngresoTextBox" runat="server" style="margin-left: 0px" CssClass="datepicker" ></asp:TextBox>
             </td>
             <td class="auto-style7" colspan="5">&nbsp;</td>
             <td class="auto-style4" colspan="2">&nbsp;</td>
-            <td class="auto-style4" colspan="2">&nbsp;
-                <input type="text" id="datepicker"/>
+            <td class="auto-style4" colspan="2">&nbsp;&nbsp;
             </td>
         </tr>
         <tr>
@@ -97,7 +96,7 @@
                 <asp:Label ID="Label2" runat="server" Text="Fecha Nacimiento"></asp:Label>
                 :</td>
             <td class="auto-style11">
-                <asp:TextBox ID="FechaNacimientoTextBox" runat="server" TextMode="Date"></asp:TextBox>
+                <asp:TextBox ID="FechaNacimientoTextBox" runat="server" CssClass="datepicker"></asp:TextBox>
             </td>
             <td class="auto-style12">Genero:</td>
             <td class="auto-style12" colspan="5">

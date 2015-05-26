@@ -33,7 +33,7 @@
             <td>&nbsp;</td>
             <td colspan="3">Fecha:</td>
             <td colspan="4">
-                <asp:TextBox ID="FechaTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="FechaTextBox" runat="server" CssClass="datepicker"></asp:TextBox>
             </td>
             <td colspan="3">&nbsp;</td>
             <td colspan="2">&nbsp;</td>
