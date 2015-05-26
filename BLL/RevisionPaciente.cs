@@ -94,26 +94,6 @@ namespace BLL
             return Retorno;
         }
 
-        public bool BuscarRevisionDetalle(int id)
-        {
-            bool Retorno = false;
-            DataTable dt = new DataTable();
-
-            dt = conexion.BuscarDb("select * from RevisionDetalle where IdRevision='" + id + "'");
-
-            if (dt.Rows.Count > 0)
-            {
-                Retorno = true;
-                IdRevision = (int)dt.Rows[0]["IdRevision"];
-                IdRevisionDetalle =(int)dt.Rows[0]["IdRevisionDetalle"];
-                IdSistema = (int)dt.Rows[0]["IdSistema"];
-                Estado = dt.Rows[0]["Estado"].ToString();
-
-            }
-
-            return Retorno;
-        }
-
         public DataTable Listar(String Campos,String tabla ,String FiltroWhere)
         {
             Conexion ConexionDB = new Conexion();

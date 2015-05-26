@@ -51,7 +51,20 @@
         </tr>
         <tr>
             <td colspan="7">
-                <asp:GridView ID="RevisionGridView" runat="server">
+                <asp:GridView ID="RevisionGridView" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                    <Columns>
+                        <asp:HyperLinkField DataNavigateUrlFields="Codigo" DataNavigateUrlFormatString="~/Registros/RevisionPacienteWeb.aspx?Codigo={0}" Text="Editar" />
+                        <asp:HyperLinkField DataNavigateUrlFields="Codigo" Text="Ver Detalle" DataNavigateUrlFormatString="~/Consultas/CRevisionDetalleWeb.aspx?Codigo={0}" />
+                    </Columns>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <RowStyle BackColor="White" />
+                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
             </td>
         </tr>

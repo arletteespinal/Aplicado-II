@@ -18,6 +18,21 @@ namespace ControlPacientesWeb.Registros
         {
             if (!IsPostBack)
             {
+                int id = 0;
+                int.TryParse(Request.QueryString["Codigo"], out id);
+                if (revision.BuscarRevision(id))
+                {
+                    Buscar(id);
+
+                }
+                if (CodigoTextBox.Text == string.Empty)
+                {
+                    EliminarButton.Enabled = false;
+                }
+                else
+                {
+                    EliminarButton.Enabled = true;
+                }
 
                 SistemasDropDownList.DataSource = sistemas.Listar("IdSistema as CodigoSistema, Nombre", " 1=1");
                 SistemasDropDownList.DataValueField = "CodigoSistema";
@@ -28,8 +43,19 @@ namespace ControlPacientesWeb.Registros
                 PacientesDropDownList.DataValueField = "Codigo";
                 PacientesDropDownList.DataTextField = "NombreCompleto";
                 PacientesDropDownList.DataBind();
+
+                
             }
 
+        }
+
+        private void Buscar(int idR)
+        {
+            CodigoTextBox.Text = revision.IdRevision.ToString();
+            FechaTextBox.Text = revision.Fecha.ToString() ;
+            PacientesDropDownList.SelectedValue = revision.IdPaciente.ToString();
+            DetalleGridView.DataSource = revision.Listar(" rv.IdRevisionDetalle as Codigo, rv.IdSistema as CodigoSistema, sf.Nombre as Sistema, rv.Estado ", " RevisionDetalle rv join SistemasFisiologico sf on rv.IdSistema=sf.IdSistema ", " IdRevisionPaciente='" + idR + "'");
+            DetalleGridView.DataBind();
         }
         
 
@@ -40,6 +66,7 @@ namespace ControlPacientesWeb.Registros
             if (Session["datos"] == null)
             {
                 datos = new DataTable();
+                datos.Columns.Add(new DataColumn("Codigo"));
                 datos.Columns.Add(new DataColumn("CodigoSistema"));
                 datos.Columns.Add(new DataColumn("Sistema"));
                 datos.Columns.Add(new DataColumn("Estado"));
@@ -67,10 +94,6 @@ namespace ControlPacientesWeb.Registros
 
             revision.Fecha = DateTime.Now;
             revision.IdPaciente =Convert.ToInt32( PacientesDropDownList.SelectedValue);
-            revision.IdSistema = 1;
-            revision.Estado = "hola";
-            revision.IdSistema = 1;
-            revision.Estado = "no se";
 
             if (CodigoTextBox.Text == string.Empty)
             {

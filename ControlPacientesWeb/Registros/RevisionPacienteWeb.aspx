@@ -22,7 +22,7 @@
             <td>&nbsp;</td>
             <td>Codigo:</td>
             <td colspan="8">
-                <asp:TextBox ID="CodigoTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="CodigoTextBox" runat="server" Enabled="False" ForeColor="Black"></asp:TextBox>
             </td>
             <td colspan="2">&nbsp;</td>
             <td colspan="4">&nbsp;</td>
@@ -134,6 +134,7 @@
 
                 <asp:GridView ID="DetalleGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" Height="137px" Width="637px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" ForeColor="Black" Enabled="False">
                     <Columns>
+                        <asp:BoundField HeaderText="Codigo" />
                         <asp:BoundField DataField="CodigoSistema" HeaderText="CodigoSistema" />
                         <asp:BoundField DataField="Sistema" HeaderText="Sistema" />
                         <asp:BoundField DataField="Estado" HeaderText="Estado" />
@@ -167,7 +168,7 @@
 
                 <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
                 <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
-                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" OnClick="EliminarButton_Click" />
+                <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" OnClick="EliminarButton_Click" Enabled="False" />
              
             </td>
             <td>&nbsp;</td>
