@@ -13,4 +13,5 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
+    <asp:HyperLink ID="AtrasHyperLink" runat="server" NavigateUrl="~/Consultas/CRevisionPacientesWeb.aspx"><< atras </asp:HyperLink>
 </asp:Content>

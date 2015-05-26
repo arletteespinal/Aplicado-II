@@ -62,6 +62,7 @@
     <Content Include="Consultas\CRevisionPacientesWeb.aspx" />
     <Content Include="Consultas\CSistemasFisiologicoWeb.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Imagenes\RevisionPacientes.jpg" />
     <Content Include="Registros\PacientesWeb.aspx" />
     <Content Include="Content\css\bootstrap-responsive.css" />
     <Content Include="Content\css\bootstrap-responsive.min.css" />

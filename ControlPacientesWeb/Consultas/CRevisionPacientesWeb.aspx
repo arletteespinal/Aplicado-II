@@ -26,7 +26,7 @@
                     <asp:ListItem Value="0">Nombres</asp:ListItem>
                     <asp:ListItem Value="1">Apellidos</asp:ListItem>
                     <asp:ListItem Value="2">Cedula</asp:ListItem>
-                    <asp:ListItem Value="3">Fecha Ingreso</asp:ListItem>
+                    <asp:ListItem Value="3">Fecha</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="auto-style8">

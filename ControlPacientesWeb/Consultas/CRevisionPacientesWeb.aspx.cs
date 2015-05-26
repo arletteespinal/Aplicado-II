@@ -24,7 +24,28 @@ namespace ControlPacientesWeb.Consultas
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
+            if (FiltroDropDownList.SelectedIndex == 0)
+            {
+                filtro = " Nombres like '%" + FiltroTextBox.Text + "%'";
+            }
 
+            if (FiltroDropDownList.SelectedIndex == 1)
+            {
+                filtro = " Apellidos like '%" + FiltroTextBox.Text + "%'";
+            }
+
+            if (FiltroDropDownList.SelectedIndex == 2)
+            {
+                filtro = " Cedula='" + FiltroTextBox.Text + "'";
+            }
+
+            if (FiltroDropDownList.SelectedIndex == 3)
+            {
+                filtro = "FechaIngreso between '2015-05-16' and '2015-05-16'";
+            }
+
+            RevisionGridView.DataSource = revision.Listar("IdRevision as Codigo, Fecha, p.Nombres+' '+p.Apellidos as NombreCompleto", " RevisionPaciente rp join Pacientes p on p.IdPaciente=rp.IdPaciente ", filtro);
+            RevisionGridView.DataBind();
         }
     }
 }
