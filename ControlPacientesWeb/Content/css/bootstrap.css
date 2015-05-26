@@ -618,7 +618,7 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
-    text-align: center;
+    text-align: left;
 }
 
 .container:before,

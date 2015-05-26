@@ -78,7 +78,7 @@
         <tr>
             <td class="auto-style11">Nombres:</td>
             <td class="auto-style11" colspan="14">
-                <asp:TextBox ID="NombresTextBox" runat="server" Width="324px"></asp:TextBox>
+                <asp:TextBox ID="NombresTextBox" runat="server" Width="469px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="El campo &quot;Nombres&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -87,7 +87,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Apellidos"></asp:Label>
                 :</td>
             <td class="auto-style3" colspan="14">
-                <asp:TextBox ID="ApellidosTextBox" runat="server" Width="321px"></asp:TextBox>
+                <asp:TextBox ID="ApellidosTextBox" runat="server" Width="473px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ApellidosTextBox" ErrorMessage="El campo &quot;Apellidos&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -144,13 +144,13 @@
         <tr>
             <td class="auto-style1">Dirección:</td>
             <td class="auto-style3" colspan="14">
-                <asp:TextBox ID="DireccionTextBox" runat="server" Width="311px"></asp:TextBox>
+                <asp:TextBox ID="DireccionTextBox" runat="server" Width="479px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Ocupación:</td>
             <td class="auto-style3" colspan="14">
-                <asp:TextBox ID="OcupacionTextBox" runat="server" Width="311px"></asp:TextBox>
+                <asp:TextBox ID="OcupacionTextBox" runat="server" Width="480px"></asp:TextBox>
             </td>
         </tr>
         <tr>
