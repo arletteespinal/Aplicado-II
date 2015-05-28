@@ -39,8 +39,8 @@ namespace ControlPacientesWeb.Registros
             CodigoTextBox.Text = pacientes.IdPaciente.ToString();
             NombresTextBox.Text = pacientes.Nombres;
             ApellidosTextBox.Text = pacientes.Apellidos;
-            //FechaIngresoTextBox.Text = pacientes.FechaIngreso.ToString("MM/dd/yyyy");
-            FechaNacimientoTextBox.Text = pacientes.FechaNacimiento.ToString("MM/dd/yyyy");
+            //FechaIngresoTextBox.Text = pacientes.FechaIngreso.ToString("yyyy-MM-dd");
+          //  FechaNacimientoTextBox.Text = pacientes.FechaNacimiento.ToString("yyyy-MM-dd");
             GeneroDropDownList.SelectedIndex = pacientes.Genero;
             TelefonoTextBox.Text = pacientes.Telefono;
             CelularTextBox.Text = pacientes.Celular;
@@ -52,6 +52,8 @@ namespace ControlPacientesWeb.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
+            pacientes.FechaIngreso = Convert.ToDateTime(FechaIngresoTextBox.Text);
+            pacientes.FechaNacimiento = DateTime.Now; 
             int genero = 0;
             int.TryParse(GeneroDropDownList.SelectedValue, out genero);
             pacientes.Genero = genero;
@@ -62,8 +64,7 @@ namespace ControlPacientesWeb.Registros
             pacientes.Telefono = TelefonoTextBox.Text;
             pacientes.Ocupacion = OcupacionTextBox.Text;
             pacientes.Direccion = DireccionTextBox.Text;
-            pacientes.FechaIngreso = DateTime.Now;
-            pacientes.FechaNacimiento = DateTime.Now;
+           
 
 
             if (CodigoTextBox.Text == string.Empty)

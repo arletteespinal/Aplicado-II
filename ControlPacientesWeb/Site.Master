@@ -6,72 +6,73 @@
 <head runat="server">
     <title></title>
     <link href="Content/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css"/>
-  <script >
-      $(function () {
-          $(".datepicker").datepicker();
-      });
-  </script>
+
+    <link href="Content/css/jquery-ui.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/jquery-ui.js"></script>
+
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    
-        <form id="form1" runat="server">
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse collapse">
-                <asp:Menu ID="NavigationMenu" runat="server" EnableViewState="false"
-                    IncludeStyleBlock="false" Orientation="Horizontal"
-                    CssClass="navbar navbar-fixed-top"
-                    StaticMenuStyle-CssClass="nav"
-                    StaticSelectedStyle-CssClass="active"
-                    DynamicMenuStyle-CssClass="dropdown-menu">
-                    <Items>
-                        <asp:MenuItem Text="Inicio" ToolTip="Inicio" NavigateUrl="Default.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Registros" ToolTip="Registros">
-                            <asp:MenuItem Text="Pacientes" ToolTip="Pacientes" NavigateUrl="Registros/PacientesWeb.aspx" />
-                            <asp:MenuItem Text="Sistemas Fisiologicos" ToolTip="Sistemas Fisiologicos" NavigateUrl="Registros/SistemasFisiologicoWeb.aspx"/>
-                            <asp:MenuItem Text="Revision Pacientes" ToolTip="Revision Pacientes" NavigateUrl="Registros/RevisionPacienteWeb.aspx" />
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Consultas" ToolTip="Consultas">
-                            <asp:MenuItem Text="Pacientes" ToolTip="Pacientes" NavigateUrl="Consultas/CPacientesWeb.aspx"/>
-                            <asp:MenuItem Text="Sistemas Fisiologicos" ToolTip="Sistemas Fisiologicos" NavigateUrl="Consultas/CSistemasFisiologicoWeb.aspx" />
-                            <asp:MenuItem Text="Revision Pacientes" ToolTip="Revision Pacientes" NavigateUrl="~/Consultas/CRevisionPacientesWeb.aspx" />
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="Acerca de" ToolTip="Acerca de" NavigateUrl="~/AcercaDe.aspx"></asp:MenuItem>
-                    </Items>
-                </asp:Menu>
+
+    <form id="form1" runat="server">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div class="nav-collapse collapse">
+                        <asp:Menu ID="NavigationMenu" runat="server" EnableViewState="false"
+                            IncludeStyleBlock="false" Orientation="Horizontal"
+                            CssClass="navbar navbar-fixed-top"
+                            StaticMenuStyle-CssClass="nav"
+                            StaticSelectedStyle-CssClass="active"
+                            DynamicMenuStyle-CssClass="dropdown-menu">
+                            <Items>
+                                <asp:MenuItem Text="Inicio" ToolTip="Inicio" NavigateUrl="Default.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Registros" ToolTip="Registros">
+                                    <asp:MenuItem Text="Pacientes" ToolTip="Pacientes" NavigateUrl="Registros/PacientesWeb.aspx" />
+                                    <asp:MenuItem Text="Sistemas Fisiologicos" ToolTip="Sistemas Fisiologicos" NavigateUrl="Registros/SistemasFisiologicoWeb.aspx" />
+                                    <asp:MenuItem Text="Revision Pacientes" ToolTip="Revision Pacientes" NavigateUrl="Registros/RevisionPacienteWeb.aspx" />
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Consultas" ToolTip="Consultas">
+                                    <asp:MenuItem Text="Pacientes" ToolTip="Pacientes" NavigateUrl="Consultas/CPacientesWeb.aspx" />
+                                    <asp:MenuItem Text="Sistemas Fisiologicos" ToolTip="Sistemas Fisiologicos" NavigateUrl="Consultas/CSistemasFisiologicoWeb.aspx" />
+                                    <asp:MenuItem Text="Revision Pacientes" ToolTip="Revision Pacientes" NavigateUrl="~/Consultas/CRevisionPacientesWeb.aspx" />
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Acerca de" ToolTip="Acerca de" NavigateUrl="~/AcercaDe.aspx"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
-    <script src="Scripts/jquery-2.1.4.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-     <div class="container">
-        <br />
-        <br />
-         <br />
-        <br />
-         <br />
-        <br />
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-        </form>
-    
+
+        <div class="container">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
 </body>
 </html>

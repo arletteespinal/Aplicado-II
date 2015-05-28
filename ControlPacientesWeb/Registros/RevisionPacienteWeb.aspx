@@ -132,13 +132,7 @@
             <td colspan="16">
                 
 
-                <asp:GridView ID="DetalleGridView" runat="server" AutoGenerateColumns="False" CellPadding="4" Height="137px" Width="637px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" ForeColor="Black" Enabled="False">
-                    <Columns>
-                        <asp:BoundField HeaderText="Codigo" />
-                        <asp:BoundField DataField="CodigoSistema" HeaderText="CodigoSistema" />
-                        <asp:BoundField DataField="Sistema" HeaderText="Sistema" />
-                        <asp:BoundField DataField="Estado" HeaderText="Estado" />
-                    </Columns>
+                <asp:GridView ID="DetalleGridView" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" AutoGenerateSelectButton="True" OnSelectedIndexChanged="DetalleGridView_SelectedIndexChanged">
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />

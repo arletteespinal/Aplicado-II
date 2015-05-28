@@ -28,10 +28,12 @@ namespace ControlPacientesWeb.Registros
                 if (CodigoTextBox.Text == string.Empty)
                 {
                     EliminarButton.Enabled = false;
+                    DetalleGridView.AutoGenerateSelectButton = false;
                 }
                 else
                 {
                     EliminarButton.Enabled = true;
+                    DetalleGridView.AutoGenerateSelectButton = true;
                 }
 
                 SistemasDropDownList.DataSource = sistemas.Listar("IdSistema as CodigoSistema, Nombre", " 1=1");
@@ -44,55 +46,68 @@ namespace ControlPacientesWeb.Registros
                 PacientesDropDownList.DataTextField = "NombreCompleto";
                 PacientesDropDownList.DataBind();
 
-                
+                Session.Abandon();
             }
 
+            
         }
 
         private void Buscar(int idR)
         {
             CodigoTextBox.Text = revision.IdRevision.ToString();
-            FechaTextBox.Text = revision.Fecha.ToString() ;
+            FechaTextBox.Text = revision.Fecha.ToString("MM/dd/yyyy");
             PacientesDropDownList.SelectedValue = revision.IdPaciente.ToString();
             DetalleGridView.DataSource = revision.Listar(" rv.IdRevisionDetalle as Codigo, rv.IdSistema as CodigoSistema, sf.Nombre as Sistema, rv.Estado ", " RevisionDetalle rv join SistemasFisiologico sf on rv.IdSistema=sf.IdSistema ", " IdRevisionPaciente='" + idR + "'");
             DetalleGridView.DataBind();
         }
-        
+
 
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
-            DataTable datos = new DataTable();
-
-            if (Session["datos"] == null)
+            if (CodigoTextBox.Text == string.Empty)
             {
-                datos = new DataTable();
-                datos.Columns.Add(new DataColumn("Codigo"));
-                datos.Columns.Add(new DataColumn("CodigoSistema"));
-                datos.Columns.Add(new DataColumn("Sistema"));
-                datos.Columns.Add(new DataColumn("Estado"));
+                DataTable datos = new DataTable();
 
+                if (Session["datos"] == null)
+                {
+                    datos = new DataTable();
+                    datos.Columns.Add(new DataColumn("Codigo"));
+                    datos.Columns.Add(new DataColumn("CodigoSistema"));
+                    datos.Columns.Add(new DataColumn("Sistema"));
+                    datos.Columns.Add(new DataColumn("Estado"));
+
+                }
+
+                else
+                {
+                    datos = Session["datos"] as DataTable;
+                }
+
+                DataRow row = datos.NewRow();
+                row["CodigoSistema"] = SistemasDropDownList.SelectedValue;
+                row["Sistema"] = SistemasDropDownList.SelectedItem;
+                row["Estado"] = EstadoTextBox.Text;
+                datos.Rows.Add(row);
+
+                Session["datos"] = datos;
+                DetalleGridView.DataSource = datos;
+                DetalleGridView.DataBind();
             }
-
             else
             {
-                datos = Session["datos"] as DataTable;
+                
+                DetalleGridView.Rows[DetalleGridView.SelectedIndex].Cells[2].Text = SistemasDropDownList.SelectedValue;
+                DetalleGridView.Rows[DetalleGridView.SelectedIndex].Cells[4].Text = EstadoTextBox.Text;
             }
-
-            DataRow row = datos.NewRow();
-            row["CodigoSistema"] = SistemasDropDownList.SelectedValue;
-            row["Sistema"] = SistemasDropDownList.SelectedItem;
-            row["Estado"] = EstadoTextBox.Text;
-            datos.Rows.Add(row);
-
-            Session["datos"] = datos;
-            DetalleGridView.DataSource = datos;
-            DetalleGridView.DataBind();
+                
+            
         }
+       
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
 
-            revision.Fecha = DateTime.Now;
+            revision.Fecha = Convert.ToDateTime(FechaTextBox.Text);
             revision.IdPaciente =Convert.ToInt32( PacientesDropDownList.SelectedValue);
 
             if (CodigoTextBox.Text == string.Empty)
@@ -107,33 +122,41 @@ namespace ControlPacientesWeb.Registros
                         DataTable datos = Session["datos"] as DataTable;
                         foreach (DataRow row in datos.Rows)
                         {
-
-                            revision.IdSistema = int.Parse(row["CodigoSistema"].ToString());
+                           
+                            revision.IdSistema  = int.Parse(row["CodigoSistema"].ToString());
                             revision.Estado = row["Estado"].ToString();
                             revision.InsertarRevisionDetalle();
                         }
+                        
                     }
-                
+                   
             }
             else
             {
                 int id = 0;
                 int.TryParse(CodigoTextBox.Text, out id);
-                revision.IdSistema = id;
+                revision.IdRevision = id;
+
                 if (revision.ModificarRevision())
                 {
+                    
+                        //foreach ()
+                        //{
+                            
+                        //    //revision.IdRevisionDetalle = Convert.ToInt32(row["Codigo"].ToString());
+                        //    //revision.IdSistema = int.Parse(row["CodigoSistema"].ToString());
+                        //    //revision.Estado = row["Estado"].ToString();
+                        //    revision.ModificarRevisionDetalle();
+      
+                        //}
 
-                    DataTable datos = Session["datos"] as DataTable;
-                    foreach (DataRow row in datos.Rows)
-                    {
-                        revision.IdSistema = int.Parse(row["CodigoSistema"].ToString());
-                        revision.Estado = row["Estado"].ToString();
-                        revision.ModificarRevisionDetalle();
-                    }
+                        
                 }
             }
+            
+        
+        
         }
-
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
             int id = 0;
@@ -143,6 +166,13 @@ namespace ControlPacientesWeb.Registros
             {
                 revision.EliminarRevision();
             }
+        }
+
+        protected void DetalleGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SistemasDropDownList.SelectedValue = DetalleGridView.Rows[DetalleGridView.SelectedIndex].Cells[2].Text;
+            EstadoTextBox.Text = DetalleGridView.Rows[DetalleGridView.SelectedIndex].Cells[4].Text;
+
         }
 
     }
