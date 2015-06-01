@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table style="width:100%;">
+    <table style="width:50%;">
         <tr>
             <td class="text-center" colspan="3">
                 <h1><strong>Consulta de Detalles de Revision de Pacientes</strong></h1>

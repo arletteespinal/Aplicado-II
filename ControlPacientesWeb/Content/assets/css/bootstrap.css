@@ -904,6 +904,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  margin-top:15px;
 }
 
 .col-xs-1,
@@ -1309,7 +1310,6 @@ pre code {
   .col-md-11,
   .col-md-12 {
     float: left;
-    margin-top:5px;
   }
   .col-md-12 {
     width: 100%;
@@ -4240,7 +4240,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #428bca;
+  background-color: #1ABC9C;
 }
 
 .nav-stacked > li {

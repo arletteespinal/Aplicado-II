@@ -19,7 +19,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table class="auto-style2">
+    <table style="width:50%;">
         <tr>
             <td colspan="7" class="auto-style1">
                 <h1 class="auto-style10"><strong style="text-align: center">Consulta de Pacientes</strong></h1>

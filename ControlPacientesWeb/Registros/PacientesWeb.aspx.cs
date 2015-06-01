@@ -71,7 +71,7 @@ namespace ControlPacientesWeb.Registros
             {
                 if (pacientes.Insertar())
                 {
-                   
+                      
                 }
             }
             else

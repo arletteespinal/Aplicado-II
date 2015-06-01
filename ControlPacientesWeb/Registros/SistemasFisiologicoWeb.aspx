@@ -14,7 +14,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table style="width:100%;">
+    <table style="width:50%;">
         <tr>
             <td class="auto-style2" colspan="22">
                 <h1></h1>
@@ -46,6 +46,7 @@
             <td>Nombre:</td>
             <td colspan="3">
                 <asp:TextBox ID="NombreTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NombreTextBox" ErrorMessage="El campo &quot;Nombre&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
             </td>
             <td colspan="4">&nbsp;</td>
             <td colspan="3">&nbsp;</td>
@@ -61,7 +62,9 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td colspan="19">&nbsp;</td>
+            <td colspan="19">
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="#CC0000" />
+            </td>
             <td colspan="2">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -71,6 +74,7 @@
                 &nbsp;</td>
             <td class="auto-style1" colspan="3">
                 <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
+
             </td>
             <td class="auto-style1" colspan="2">
                 <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />

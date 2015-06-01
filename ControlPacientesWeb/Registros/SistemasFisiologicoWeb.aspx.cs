@@ -46,7 +46,7 @@ namespace ControlPacientesWeb.Registros
             {
                 if (sistema.Insertar())
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), ",toastr", "toastr.info('Customer Added','Message')", true); 
+                    
                 }
             }
             else

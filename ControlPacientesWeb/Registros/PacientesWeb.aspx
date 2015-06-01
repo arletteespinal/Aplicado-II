@@ -45,7 +45,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table style="width:100%;">
+    <table style="width:50%;">
         <tr>
             <td colspan="15" class="auto-style2">
                 <h1><strong>Registro de Pacientes</strong></h1>
@@ -70,7 +70,9 @@
             <td class="auto-style7" colspan="2">
                 <asp:TextBox ID="FechaIngresoTextBox" runat="server" style="margin-left: 0px" CssClass="datepicker" ></asp:TextBox>
             </td>
-            <td class="auto-style7" colspan="5">&nbsp;</td>
+            <td class="auto-style7" colspan="5">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FechaIngresoTextBox" ErrorMessage="El campo &quot;Fecha Ingreso&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
+            </td>
             <td class="auto-style4" colspan="2">&nbsp;</td>
             <td class="auto-style4" colspan="2">&nbsp;&nbsp;
             </td>
@@ -98,14 +100,17 @@
             <td class="auto-style11">
                 <asp:TextBox ID="FechaNacimientoTextBox" runat="server" CssClass="datepicker"></asp:TextBox>
             </td>
-            <td class="auto-style12">Genero:</td>
+            <td class="auto-style12">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="FechaNacimientoTextBox" ErrorMessage="El campo &quot;Fecha Nacimiento&quot; es obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
+            </td>
             <td class="auto-style12" colspan="5">
+                Genero:</td>
+            <td class="auto-style12">
                 <asp:DropDownList ID="GeneroDropDownList" runat="server">
                     <asp:ListItem Value="0">Femenino</asp:ListItem>
                     <asp:ListItem Value="1">Masculino</asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td class="auto-style12"></td>
             <td class="auto-style12" colspan="3"></td>
             <td class="auto-style13" colspan="2">
                 </td>
