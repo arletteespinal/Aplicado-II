@@ -18,7 +18,7 @@ namespace ControlPacientesWeb
 
         protected void CancelarButton_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Login.aspx");
         }
 
         protected void RegistrarButton_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace ControlPacientesWeb
                 usu.Contrasena = ContrasenaTextBox.Text;
                 if (usu.Insertar())
                 {
-
+                    Response.Redirect("Login.aspx");
                 }
           
         }

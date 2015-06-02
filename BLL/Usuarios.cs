@@ -24,7 +24,7 @@ namespace BLL
 
         public bool Insertar()
         {
-            return conexion.EjecuctarDB("insert into Usuarios (NombreUsuario,Contrasena) values ('"+this.NombreUsuario+"','"+this.Contrasena+"')");
+            return conexion.EjecutarDB("insert into Usuarios (NombreUsuario,Contrasena) values ('"+this.NombreUsuario+"','"+this.Contrasena+"')");
         }
 
         public bool Buscar(int id)
