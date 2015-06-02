@@ -23,7 +23,8 @@
 			
             <asp:TextBox ID="NombreUsuarioTextBox" runat="server"></asp:TextBox>
             <asp:TextBox ID="ContrasenaTextBox" runat="server" TextMode="Password"></asp:TextBox>
-            <asp:Button ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click" />
+            <asp:Button ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click" /> 
+           <asp:HyperLink ID="RegistrarseHyperLink" runat="server" NavigateUrl="~/Registrarse.aspx" ForeColor="White">Registrarse</asp:HyperLink>
 		</form>
 	</div>
 	

@@ -22,18 +22,23 @@ namespace BLL
             Contrasena = null;
         }
 
+        public bool Insertar()
+        {
+            return conexion.EjecuctarDB("insert into Usuarios (NombreUsuario,Contrasena) values ('"+this.NombreUsuario+"','"+this.Contrasena+"')");
+        }
+
         public bool Buscar(int id)
         {
             bool Retorno = false;
-            DataTable Datos = new DataTable();
+            DataTable dt = new DataTable();
 
-            Datos = conexion.BuscarDb("Select * from Usuarios where IdUsuario = " + id);
-            if (Datos.Rows.Count > 0)
+            dt = conexion.BuscarDb("Select * from Usuarios where IdUsuario = " + id);
+            if (dt.Rows.Count > 0)
             {
                 Retorno = true;
-                this.IdUsuario = (int)Datos.Rows[0]["IdUsuario"];
-                this.NombreUsuario = (string)Datos.Rows[0]["NombreUsuario"];
-                this.Contrasena = (string)Datos.Rows[0]["Contrasena"];
+                this.IdUsuario = (int)dt.Rows[0]["IdUsuario"];
+                this.NombreUsuario = (string)dt.Rows[0]["NombreUsuario"];
+                this.Contrasena = (string)dt.Rows[0]["Contrasena"];
             }
 
             return Retorno;
@@ -41,15 +46,17 @@ namespace BLL
 
         public Boolean Autenticar(string NombreUsuario, string Contrasena)
         {
-            Boolean retorno = false;
-            object idUsuario = conexion.ObtenerValorDb("SELECT IdUsuario from Usuarios Where NombreUsuario = '" + NombreUsuario + "' And Contrasena = '" + Contrasena + "'");
+            bool Retorno = false;
+            DataTable dt = new DataTable();
 
-            if (idUsuario != null)
+            dt = conexion.BuscarDb("SELECT IdUsuario from Usuarios Where NombreUsuario = '" + NombreUsuario + "' And Contrasena = '" + Contrasena + "'");
+
+            if (dt.Rows.Count>0)
             {
-                retorno = this.Buscar((int)idUsuario);
+                Retorno = true;
             }
 
-            return retorno;
+            return Retorno;
         }
     }
 }
