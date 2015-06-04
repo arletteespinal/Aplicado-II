@@ -59,10 +59,10 @@
   <ItemGroup>
     <Content Include="AcercaDe.aspx" />
     <Content Include="CerrarLogin.aspx" />
-    <Content Include="Consultas\CPacientesWeb.aspx" />
-    <Content Include="Consultas\CRevisionDetalleWeb.aspx" />
-    <Content Include="Consultas\CRevisionPacientesWeb.aspx" />
-    <Content Include="Consultas\CSistemasFisiologicoWeb.aspx" />
+    <Content Include="ControlPanel\Consultas\CPacientesWeb.aspx" />
+    <Content Include="ControlPanel\Consultas\CRevisionDetalleWeb.aspx" />
+    <Content Include="ControlPanel\Consultas\CRevisionPacientesWeb.aspx" />
+    <Content Include="ControlPanel\Consultas\CSistemasFisiologicoWeb.aspx" />
     <Content Include="Content\assets\css\bootstrap.css" />
     <Content Include="Content\assets\css\main.css" />
     <Content Include="Content\assets\fonts\glyphicons-halflings-regular.svg" />
@@ -90,12 +90,12 @@
     <Content Include="Imagenes\RevisionPacientes.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Registrarse.aspx" />
-    <Content Include="Registros\PacientesWeb.aspx" />
+    <Content Include="ControlPanel\Registros\PacientesWeb.aspx" />
     <Content Include="Content\css\bootstrap-responsive.css" />
     <Content Include="Content\css\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Registros\RevisionPacienteWeb.aspx" />
-    <Content Include="Registros\SistemasFisiologicoWeb.aspx" />
+    <Content Include="ControlPanel\Registros\RevisionPacienteWeb.aspx" />
+    <Content Include="ControlPanel\Registros\SistemasFisiologicoWeb.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -124,32 +124,32 @@
     <Compile Include="CerrarLogin.aspx.designer.cs">
       <DependentUpon>CerrarLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\CPacientesWeb.aspx.cs">
+    <Compile Include="ControlPanel\Consultas\CPacientesWeb.aspx.cs">
       <DependentUpon>CPacientesWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\CPacientesWeb.aspx.designer.cs">
+    <Compile Include="ControlPanel\Consultas\CPacientesWeb.aspx.designer.cs">
       <DependentUpon>CPacientesWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\CRevisionDetalleWeb.aspx.cs">
+    <Compile Include="ControlPanel\Consultas\CRevisionDetalleWeb.aspx.cs">
       <DependentUpon>CRevisionDetalleWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\CRevisionDetalleWeb.aspx.designer.cs">
+    <Compile Include="ControlPanel\Consultas\CRevisionDetalleWeb.aspx.designer.cs">
       <DependentUpon>CRevisionDetalleWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\CRevisionPacientesWeb.aspx.cs">
+    <Compile Include="ControlPanel\Consultas\CRevisionPacientesWeb.aspx.cs">
       <DependentUpon>CRevisionPacientesWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\CRevisionPacientesWeb.aspx.designer.cs">
+    <Compile Include="ControlPanel\Consultas\CRevisionPacientesWeb.aspx.designer.cs">
       <DependentUpon>CRevisionPacientesWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\CSistemasFisiologicoWeb.aspx.cs">
+    <Compile Include="ControlPanel\Consultas\CSistemasFisiologicoWeb.aspx.cs">
       <DependentUpon>CSistemasFisiologicoWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Consultas\CSistemasFisiologicoWeb.aspx.designer.cs">
+    <Compile Include="ControlPanel\Consultas\CSistemasFisiologicoWeb.aspx.designer.cs">
       <DependentUpon>CSistemasFisiologicoWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
@@ -174,25 +174,25 @@
     <Compile Include="Registrarse.aspx.designer.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\PacientesWeb.aspx.cs">
+    <Compile Include="ControlPanel\Registros\PacientesWeb.aspx.cs">
       <DependentUpon>PacientesWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\PacientesWeb.aspx.designer.cs">
+    <Compile Include="ControlPanel\Registros\PacientesWeb.aspx.designer.cs">
       <DependentUpon>PacientesWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RevisionPacienteWeb.aspx.cs">
+    <Compile Include="ControlPanel\Registros\RevisionPacienteWeb.aspx.cs">
       <DependentUpon>RevisionPacienteWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\RevisionPacienteWeb.aspx.designer.cs">
+    <Compile Include="ControlPanel\Registros\RevisionPacienteWeb.aspx.designer.cs">
       <DependentUpon>RevisionPacienteWeb.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Registros\SistemasFisiologicoWeb.aspx.cs">
+    <Compile Include="ControlPanel\Registros\SistemasFisiologicoWeb.aspx.cs">
       <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registros\SistemasFisiologicoWeb.aspx.designer.cs">
+    <Compile Include="ControlPanel\Registros\SistemasFisiologicoWeb.aspx.designer.cs">
       <DependentUpon>SistemasFisiologicoWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">

@@ -65,10 +65,17 @@ namespace ControlPacientesWeb.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            int id = 0;
-            int.TryParse(CodigoTextBox.Text, out id);
-            sistema.IdSistema = id;
-            if (sistema.Eliminar())
+            try
+            {
+                int id = 0;
+                int.TryParse(CodigoTextBox.Text, out id);
+                sistema.IdSistema = id;
+                if (sistema.Eliminar())
+                {
+
+                }
+            }
+            catch (Exception)
             {
 
             }

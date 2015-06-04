@@ -88,10 +88,17 @@ namespace ControlPacientesWeb.Registros
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            int id = 0;
-            int.TryParse(CodigoTextBox.Text, out id);
-            pacientes.IdPaciente = id;
-            if (pacientes.Eliminar())
+            try
+            {
+                int id = 0;
+                int.TryParse(CodigoTextBox.Text, out id);
+                pacientes.IdPaciente = id;
+                if (pacientes.Eliminar())
+                {
+
+                }
+            }
+            catch (Exception )
             {
 
             }

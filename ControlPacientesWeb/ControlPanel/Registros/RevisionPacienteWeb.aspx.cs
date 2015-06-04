@@ -159,12 +159,19 @@ namespace ControlPacientesWeb.Registros
         }
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            int id = 0;
-            int.TryParse(CodigoTextBox.Text, out id);
-            revision.IdRevision = id;
-            if (revision.EliminarRevisionDetalle())
+            try
             {
-                revision.EliminarRevision();
+                int id = 0;
+                int.TryParse(CodigoTextBox.Text, out id);
+                revision.IdRevision = id;
+                if (revision.EliminarRevisionDetalle())
+                {
+                    revision.EliminarRevision();
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
 
