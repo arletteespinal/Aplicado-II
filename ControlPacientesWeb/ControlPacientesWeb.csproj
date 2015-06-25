@@ -59,7 +59,10 @@
   <ItemGroup>
     <Content Include="AcercaDe.aspx" />
     <Content Include="CerrarLogin.aspx" />
+    <Content Include="ContactosWeb.aspx" />
+    <Content Include="ControlPanel\Consultas\CMedicamentosWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CPacientesWeb.aspx" />
+    <Content Include="ControlPanel\Consultas\CRecetaPacientesWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CRevisionDetalleWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CRevisionPacientesWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CSistemasFisiologicoWeb.aspx" />
@@ -86,6 +89,8 @@
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\toastr.min.css" />
     <Content Include="Content\less\style.css" />
+    <Content Include="ControlPanel\Registros\MedicamentosWeb.aspx" />
+    <Content Include="ControlPanel\Registros\RecetaPacientesWeb.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Imagenes\RevisionPacientes.jpg" />
     <Content Include="Login.aspx" />
@@ -124,12 +129,33 @@
     <Compile Include="CerrarLogin.aspx.designer.cs">
       <DependentUpon>CerrarLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactosWeb.aspx.cs">
+      <DependentUpon>ContactosWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactosWeb.aspx.designer.cs">
+      <DependentUpon>ContactosWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\Consultas\CMedicamentosWeb.aspx.cs">
+      <DependentUpon>CMedicamentosWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\Consultas\CMedicamentosWeb.aspx.designer.cs">
+      <DependentUpon>CMedicamentosWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ControlPanel\Consultas\CPacientesWeb.aspx.cs">
       <DependentUpon>CPacientesWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ControlPanel\Consultas\CPacientesWeb.aspx.designer.cs">
       <DependentUpon>CPacientesWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\Consultas\CRecetaPacientesWeb.aspx.cs">
+      <DependentUpon>CRecetaPacientesWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\Consultas\CRecetaPacientesWeb.aspx.designer.cs">
+      <DependentUpon>CRecetaPacientesWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlPanel\Consultas\CRevisionDetalleWeb.aspx.cs">
       <DependentUpon>CRevisionDetalleWeb.aspx</DependentUpon>
@@ -151,6 +177,20 @@
     </Compile>
     <Compile Include="ControlPanel\Consultas\CSistemasFisiologicoWeb.aspx.designer.cs">
       <DependentUpon>CSistemasFisiologicoWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\Registros\MedicamentosWeb.aspx.cs">
+      <DependentUpon>MedicamentosWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\Registros\MedicamentosWeb.aspx.designer.cs">
+      <DependentUpon>MedicamentosWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\Registros\RecetaPacientesWeb.aspx.cs">
+      <DependentUpon>RecetaPacientesWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\Registros\RecetaPacientesWeb.aspx.designer.cs">
+      <DependentUpon>RecetaPacientesWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

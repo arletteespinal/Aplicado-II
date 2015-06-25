@@ -1,30 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CSistemasFisiologicoWeb.aspx.cs" Inherits="ControlPacientesWeb.Consultas.SistemasFisiologicoWeb" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CMedicamentosWeb.aspx.cs" Inherits="ControlPacientesWeb.ControlPanel.Consultas.CMedicamentosWeb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:50%;">
         <tr>
-            <td>&nbsp;</td>
-            <td style="font-weight: 700">
-                <h1>Consulta de Sistemas Fisiologico</h1>
+            <td class="text-center" colspan="3">
+                <h1><strong>Consulta de Medicamentos</strong></h1>
             </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
             <td>
-                &nbsp;Nombre: <asp:TextBox ID="FiltrarTextBox" runat="server"></asp:TextBox>
-                &nbsp;<asp:Button ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
+                Descripcion:
+                <asp:TextBox ID="DescripcionTextBox" runat="server"></asp:TextBox>
+                &nbsp;&nbsp;
+                <asp:Button ID="BuscarButton" runat="server" Text="Buscar" OnClick="BuscarButton_Click" />
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -36,9 +26,9 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:GridView ID="SistemasGridView" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                <asp:GridView ID="MedicamentosGridView" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                     <Columns>
-                        <asp:HyperLinkField DataNavigateUrlFields="Codigo" DataNavigateUrlFormatString="~/ControlPanel/Registros/SistemasFisiologicoWeb.aspx?Codigo={0}" Text="Editar" />
+                        <asp:HyperLinkField DataNavigateUrlFields="Codigo" DataNavigateUrlFormatString="~/ControlPanel/Registros/MedicamentosWeb.aspx?Codigo={0}" Text="Editar" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -51,6 +41,11 @@
                     <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
             </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
     </table>

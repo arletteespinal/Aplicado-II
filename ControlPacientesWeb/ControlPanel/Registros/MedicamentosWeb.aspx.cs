@@ -6,18 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace ControlPacientesWeb.Registros
+namespace ControlPacientesWeb.ControlPanel.Registros
 {
-    public partial class SistemasFisiologicoWeb : System.Web.UI.Page
+    public partial class MedicamentosWeb : System.Web.UI.Page
     {
-        SistemasFisiologico sistema = new SistemasFisiologico();
+        private Medicamentos medicamentos = new Medicamentos();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 int id = 0;
                 int.TryParse(Request.QueryString["Codigo"], out id);
-                if (sistema.Buscar(id))
+                if (medicamentos.Buscar(id))
                 {
                     Buscar();
 
@@ -35,47 +35,35 @@ namespace ControlPacientesWeb.Registros
 
         private void Buscar()
         {
-            NombreTextBox.Text = sistema.Nombre;
-            CodigoTextBox.Text = sistema.IdSistema.ToString();
+            CodigoTextBox.Text = medicamentos.IdMedicamento.ToString();
+            DescripcionTextBox.Text = medicamentos.Descripcion;
         }
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            sistema.Nombre = NombreTextBox.Text;
+            medicamentos.Descripcion = DescripcionTextBox.Text;
             if (CodigoTextBox.Text == string.Empty)
             {
-                if (sistema.Insertar())
+
+                if (medicamentos.Insertar())
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "toastr_message", "toastr.error('Guardo', 'Error')", true);﻿
+
                 }
             }
             else
             {
-                int id = 0;
-                int.TryParse(CodigoTextBox.Text, out id);
-                sistema.IdSistema = id;
-                if (sistema.Modificar())
+                medicamentos.IdMedicamento = int.Parse(CodigoTextBox.Text);
+                if (medicamentos.Modificar())
                 {
 
                 }
             }
         }
 
-       
-
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int id = 0;
-                int.TryParse(CodigoTextBox.Text, out id);
-                sistema.IdSistema = id;
-                if (sistema.Eliminar())
-                {
-
-                }
-            }
-            catch (Exception)
+            medicamentos.IdMedicamento = int.Parse(CodigoTextBox.Text);
+            if (medicamentos.Eliminar())
             {
 
             }

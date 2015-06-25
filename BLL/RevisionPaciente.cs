@@ -10,72 +10,63 @@ namespace BLL
     public class RevisionPaciente
     {
         public int IdRevision { set; get; }
-        public int IdRevisionDetalle { set; get; }
         public int IdPaciente { set; get; }
         public DateTime Fecha { set; get; }
-        public int IdSistema { get; set; }
-        public string Estado { set; get; }
+        public List<RevisionDetalle> RevisionDetalle { get;set;}
         private Conexion conexion = new Conexion();
 
         public RevisionPaciente()
         {
             IdPaciente = 0;
             IdRevision = 0;
-            IdRevisionDetalle = 0;
-            IdSistema = 0;
-            Estado = null;
+            RevisionDetalle = new List<RevisionDetalle>();
         }
 
 
-        public bool InsertarRevision()
+        public bool Insertar()
         {
-            return conexion.EjecutarDB("insert into RevisionPaciente (Fecha,IdPaciente) values('" + this.Fecha.ToString("MM/dd/yyyy") + "','" + this.IdPaciente + "')");
-        }
-
-        public bool InsertarRevisionDetalle()
-        {
-            return conexion.EjecutarDB("insert into RevisionDetalle (IdRevisionPaciente,IdSistema,Estado) values('" + this.IdRevision+ "','" + this.IdSistema+"','"+this.Estado + "')");
-        }
-
-        public bool ModificarRevision()
-        {
-            return conexion.EjecutarDB("update RevisionPaciente set Fecha='" + this.Fecha.ToString("MM/dd/yyyy") + "', IdPaciente='" + this.IdPaciente + "' where IdRevision='" + IdRevision + "'");
-        }
-
-        public bool ModificarRevisionDetalle()
-        {
-            return conexion.EjecutarDB("update RevisionDetalle set IdRevisionPaciente='" + this.IdRevision + "', IdSistema='" + this.IdSistema + "', Estado='" + this.Estado + "' where IdRevisionDetalle='" + IdRevisionDetalle + "'");
-        }
-
-        public bool EliminarRevision()
-        {
-            return conexion.EjecutarDB("delete from RevisionPaciente where IdRevision='" + this.IdRevision.ToString() + "'");
-        }
-
-        public bool EliminarRevisionDetalle()
-        {
-            return conexion.EjecutarDB("delete from RevisionDetalle where IdRevisionPaciente='" + this.IdRevision.ToString() + "'");
-        }
-
-        public bool BuscarIdRevision()
-        {
-            bool Retorno = false;
-            DataTable dt = new DataTable();
-
-            dt = conexion.BuscarDb("select Max(IdRevision) as IdRevision from RevisionPaciente");
-
-            if (dt.Rows.Count > 0)
+            String Comando;
+            Comando = "insert into RevisionPaciente (Fecha,IdPaciente) values('" + this.Fecha.ToString("MM/dd/yyyy") + "','" + this.IdPaciente + "')"; 
+      
+            foreach (RevisionDetalle detalle in RevisionDetalle)
             {
-                Retorno = true;
-                IdRevision = (int)dt.Rows[0]["IdRevision"];
 
+                Comando += "insert into RevisionDetalle (IdRevisionPaciente,IdSistema,Estado) values((select max(IdRevision) as IdRevision from RevisionPaciente),'" + detalle.IdSistema + "','" + detalle.Estado + "')";
+            }
+        
+            return conexion.EjecutarDB(Comando);
+            
+        }
+
+        public void agregarRevisionDetalle(int idSistema, string estado)
+        {
+            RevisionDetalle.Add( new RevisionDetalle(idSistema,estado));
+        }
+
+        public bool Modificar()
+        {
+            String Comando;
+            Comando = "update RevisionPaciente set Fecha='" + this.Fecha.ToString("MM/dd/yyyy") + "', IdPaciente='" + this.IdPaciente + "' where IdRevision='" + IdRevision + "'";
+
+            foreach (RevisionDetalle detalle in RevisionDetalle)
+            {
+
+                Comando += "insert into RevisionDetalle (IdRevisionPaciente,IdSistema,Estado) values('"+this.IdRevision+"','" + detalle.IdSistema + "','" + detalle.Estado + "')";
             }
 
-            return Retorno;
+            return conexion.EjecutarDB(Comando);
         }
 
+        public bool Eliminar()
+        {
+            String Comando;
+            Comando = "delete from RevisionDetalle where IdRevisionPaciente='" + this.IdRevision.ToString() + "'";
+            Comando += "delete from RevisionPaciente where IdRevision='" + this.IdRevision.ToString() + "'";
 
-        public bool BuscarRevision(int id)
+            return conexion.EjecutarDB(Comando);
+        }
+
+        public bool Buscar(int id)
         {
             bool Retorno = false;
             DataTable dt = new DataTable();
@@ -94,10 +85,10 @@ namespace BLL
             return Retorno;
         }
 
-        public DataTable Listar(String Campos,String tabla ,String FiltroWhere)
+        public DataTable Listar(String Campos,String Tabla ,String FiltroWhere)
         {
             Conexion ConexionDB = new Conexion();
-            return ConexionDB.BuscarDb("Select " + Campos + " from "+tabla+" where " + FiltroWhere);
+            return ConexionDB.BuscarDb("Select " + Campos + " from "+Tabla+" where " + FiltroWhere);
         }
 
     }

@@ -39,8 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Medicamentos.cs" />
     <Compile Include="Pacientes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecetaDetalle.cs" />
+    <Compile Include="RecetaPacientes.cs" />
+    <Compile Include="RevisionDetalle.cs" />
     <Compile Include="RevisionPaciente.cs" />
     <Compile Include="SistemasFisiologico.cs" />
     <Compile Include="Usuarios.cs" />

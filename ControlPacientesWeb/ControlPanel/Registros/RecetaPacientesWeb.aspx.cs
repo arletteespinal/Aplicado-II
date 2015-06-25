@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
-namespace ControlPacientesWeb.Registros
+namespace ControlPacientesWeb.ControlPanel.Registros
 {
-    public partial class RevisionPacienteWeb : System.Web.UI.Page
+    public partial class RecetaPacientesWeb : System.Web.UI.Page
     {
-        private RevisionPaciente revision = new RevisionPaciente();
-        private SistemasFisiologico sistemas = new SistemasFisiologico();
+        private RecetaPacientes receta = new RecetaPacientes();
+        private Medicamentos medicamentos = new Medicamentos();
         private Pacientes pacientes = new Pacientes();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 int id = 0;
                 int.TryParse(Request.QueryString["Codigo"], out id);
-                if (revision.Buscar(id))
+                if (receta.Buscar(id))
                 {
                     Buscar(id);
 
@@ -29,18 +27,18 @@ namespace ControlPacientesWeb.Registros
                 if (CodigoTextBox.Text == string.Empty)
                 {
                     EliminarButton.Enabled = false;
-                
+
                 }
                 else
                 {
                     EliminarButton.Enabled = true;
-                  
+
                 }
 
-                SistemasDropDownList.DataSource = sistemas.Listar("IdSistema as CodigoSistema, Nombre", " 1=1");
-                SistemasDropDownList.DataValueField = "CodigoSistema";
-                SistemasDropDownList.DataTextField = "Nombre";
-                SistemasDropDownList.DataBind();
+                MedicamentosDropDownList.DataSource = medicamentos.Listar("IdMedicamento as CodigoMedicamento, Descripcion", " 1=1");
+                MedicamentosDropDownList.DataValueField = "CodigoMedicamento";
+                MedicamentosDropDownList.DataTextField = "Descripcion";
+                MedicamentosDropDownList.DataBind();
 
                 PacientesDropDownList.DataSource = pacientes.NombreCompleto();
                 PacientesDropDownList.DataValueField = "Codigo";
@@ -50,97 +48,89 @@ namespace ControlPacientesWeb.Registros
                 Session.Abandon();
             }
 
-            
         }
 
         private void Buscar(int idR)
         {
-            CodigoTextBox.Text = revision.IdRevision.ToString();
-            FechaTextBox.Text = revision.Fecha.ToString("MM/dd/yyyy");
-            PacientesDropDownList.SelectedValue = revision.IdPaciente.ToString();
-            DetalleGridView.DataSource = revision.Listar(" rv.IdSistema as CodigoSistema, sf.Nombre as Sistema, rv.Estado ", " RevisionDetalle rv join SistemasFisiologico sf on rv.IdSistema=sf.IdSistema ", " IdRevisionPaciente='" + idR + "'");
+            CodigoTextBox.Text = receta.IdRecetaPaciente.ToString();
+            FechaTextBox.Text = receta.Fecha.ToString("MM/dd/yyyy");
+            PacientesDropDownList.SelectedValue = receta.IdPaciente.ToString();
+            DetalleGridView.DataSource = receta.Listar(" m.IdMedicamento as CodigoMedicamento, m.Descripcion as Medicamento, m.Frecuencia ", "  RecetaDetalle rd join Medicamentos m on rd.IdMedicamento=m.IdMedicamento ", " IdReceta='" + idR + "'");
             DetalleGridView.DataBind();
-        }
 
+        }
 
         protected void AgregarButton_Click(object sender, EventArgs e)
         {
             if (CodigoTextBox.Text == string.Empty)
             {
 
-                if (Session["revision"] != null)
+                if (Session["receta"] != null)
                 {
-                    revision = (RevisionPaciente)Session["revision"];
+                    receta = (RecetaPacientes)Session["receta"];
                 }
 
-                revision.agregarRevisionDetalle(Convert.ToInt32(SistemasDropDownList.SelectedValue),EstadoTextBox.Text);
+                receta.agregarRecetaDetalle(Convert.ToInt32(MedicamentosDropDownList.SelectedValue),FrecuenciaTextBox.Text);
 
-                DetalleGridView.DataSource = revision.RevisionDetalle;
+                DetalleGridView.DataSource = receta.RecetaDetalle;
                 DetalleGridView.DataBind();
 
-                Session["revision"] = revision;
+                Session["receta"] = receta;
             }
             else
             {
-                
+
             }
-                
-            
         }
-       
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
+            // receta.Fecha = Convert.ToDateTime(FechaTextBox.Text);
 
-           // revision.Fecha = Convert.ToDateTime(FechaTextBox.Text);
-           
 
             if (CodigoTextBox.Text == string.Empty)
             {
 
-                if (Session["revision"] != null)
+                if (Session["receta"] != null)
                 {
-                    revision = (RevisionPaciente)Session["revision"];
+                    receta = (RecetaPacientes)Session["receta"];
                 }
 
-                revision.Fecha = DateTime.Now;
-                revision.IdPaciente = Convert.ToInt32(PacientesDropDownList.SelectedValue);
+                receta.Fecha = DateTime.Now;
+                receta.IdPaciente = Convert.ToInt32(PacientesDropDownList.SelectedValue);
 
 
-                if (revision.Insertar())
+                if (receta.Insertar())
                 {
 
                 }
-                
-      
-                   
+
             }
             else
             {
                 int id = 0;
                 int.TryParse(CodigoTextBox.Text, out id);
-                revision.IdRevision = id;
+                receta.IdRecetaPaciente = id;
 
-                if (revision.Modificar())
+                if (receta.Modificar())
                 {
-                    
-                        
+
+
                 }
             }
             
-        
-        
         }
+
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
             try
             {
                 int id = 0;
                 int.TryParse(CodigoTextBox.Text, out id);
-                revision.IdRevision = id;
-                if (revision.Eliminar())
+                receta.IdRecetaPaciente = id;
+                if (receta.Eliminar())
                 {
-                    
+
                 }
             }
             catch (Exception)
@@ -148,6 +138,5 @@ namespace ControlPacientesWeb.Registros
 
             }
         }
-
     }
 }

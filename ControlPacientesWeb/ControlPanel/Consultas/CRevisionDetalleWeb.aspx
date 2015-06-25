@@ -28,7 +28,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:HyperLink ID="AtrasHyperLink" runat="server" NavigateUrl="~/Consultas/CRevisionPacientesWeb.aspx"><< atras </asp:HyperLink>
+                <asp:HyperLink ID="AtrasHyperLink" runat="server" NavigateUrl="~/ControlPanel/Consultas/CRevisionPacientesWeb.aspx"><< atras </asp:HyperLink>
             </td>
             <td>&nbsp;</td>
         </tr>

@@ -23,7 +23,7 @@ namespace ControlPacientesWeb
 
             if (usu.Autenticar(NombreUsuarioTextBox.Text, ContrasenaTextBox.Text))
             {
-                Session["usuario"] =NombreUsuarioTextBox.Text;
+                //Session["usuario"] =NombreUsuarioTextBox.Text;
                 FormsAuthentication.RedirectFromLoginPage(NombreUsuarioTextBox.Text, true);
             }
             else

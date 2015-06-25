@@ -1,16 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RevisionPacienteWeb.aspx.cs" Inherits="ControlPacientesWeb.Registros.RevisionPacienteWeb" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RecetaPacientesWeb.aspx.cs" Inherits="ControlPacientesWeb.ControlPanel.Registros.RecetaPacientesWeb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            height: 55px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table style="width:50%;">
+     <table style="width:50%;">
         <tr>
             <td colspan="18" style="font-weight: 700">
-                <h1>Registro de Revision de Pacientes</h1>
+                <h1>Registro de Receta de Pacientes</h1>
             </td>
         </tr>
         <tr>
@@ -65,7 +60,7 @@
             <td class="auto-style1" colspan="16">
                 
 
-              <fieldset><legend><b>Revision por Sistemas</b></legend>
+              <fieldset><legend>Medicamentos</legend>
 
                    </fieldset>
               
@@ -77,7 +72,7 @@
             <td colspan="2">
                 
 
-                Sistema:</td>
+                Medicamentos:</td>
             <td colspan="2">
                 
 
@@ -97,7 +92,7 @@
             <td colspan="6">
                 
 
-                Estado:</td>
+                Frecuencia:</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -105,13 +100,13 @@
             <td colspan="5">
                 
 
-                <asp:DropDownList ID="SistemasDropDownList" runat="server">
+                <asp:DropDownList ID="MedicamentosDropDownList" runat="server">
                 </asp:DropDownList>
             </td>
             <td colspan="8">
                 
 
-                <asp:TextBox ID="EstadoTextBox" runat="server" Width="357px"></asp:TextBox>
+                <asp:TextBox ID="FrecuenciaTextBox" runat="server" Width="357px"></asp:TextBox>
             </td>
             <td colspan="3">
                 
