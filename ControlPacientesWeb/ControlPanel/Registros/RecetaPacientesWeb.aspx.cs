@@ -55,7 +55,7 @@ namespace ControlPacientesWeb.ControlPanel.Registros
             CodigoTextBox.Text = receta.IdRecetaPaciente.ToString();
             FechaTextBox.Text = receta.Fecha.ToString("MM/dd/yyyy");
             PacientesDropDownList.SelectedValue = receta.IdPaciente.ToString();
-            DetalleGridView.DataSource = receta.Listar(" m.IdMedicamento as CodigoMedicamento, m.Descripcion as Medicamento, m.Frecuencia ", "  RecetaDetalle rd join Medicamentos m on rd.IdMedicamento=m.IdMedicamento ", " IdReceta='" + idR + "'");
+            DetalleGridView.DataSource = receta.Listar(" m.IdMedicamento as CodigoMedicamento, m.Descripcion as Medicamento, rd.Frecuencia ", "  RecetaDetalle rd join Medicamentos m on rd.IdMedicamento=m.IdMedicamento ", " IdReceta='" + idR + "'");
             DetalleGridView.DataBind();
 
         }
@@ -85,7 +85,7 @@ namespace ControlPacientesWeb.ControlPanel.Registros
 
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
-            // receta.Fecha = Convert.ToDateTime(FechaTextBox.Text);
+           
 
 
             if (CodigoTextBox.Text == string.Empty)
@@ -96,7 +96,7 @@ namespace ControlPacientesWeb.ControlPanel.Registros
                     receta = (RecetaPacientes)Session["receta"];
                 }
 
-                receta.Fecha = DateTime.Now;
+                receta.Fecha = Convert.ToDateTime(FechaTextBox.Text);
                 receta.IdPaciente = Convert.ToInt32(PacientesDropDownList.SelectedValue);
 
 

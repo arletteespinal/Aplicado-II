@@ -92,7 +92,7 @@ namespace ControlPacientesWeb.Registros
         protected void GuardarButton_Click(object sender, EventArgs e)
         {
 
-           // revision.Fecha = Convert.ToDateTime(FechaTextBox.Text);
+         
            
 
             if (CodigoTextBox.Text == string.Empty)
@@ -103,7 +103,7 @@ namespace ControlPacientesWeb.Registros
                     revision = (RevisionPaciente)Session["revision"];
                 }
 
-                revision.Fecha = DateTime.Now;
+                revision.Fecha = Convert.ToDateTime(FechaTextBox.Text);
                 revision.IdPaciente = Convert.ToInt32(PacientesDropDownList.SelectedValue);
 
 

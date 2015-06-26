@@ -62,6 +62,7 @@
     <Content Include="ContactosWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CMedicamentosWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CPacientesWeb.aspx" />
+    <Content Include="ControlPanel\Consultas\CRecetaDetalleWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CRecetaPacientesWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CRevisionDetalleWeb.aspx" />
     <Content Include="ControlPanel\Consultas\CRevisionPacientesWeb.aspx" />
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="ControlPanel\Consultas\CPacientesWeb.aspx.designer.cs">
       <DependentUpon>CPacientesWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\Consultas\CRecetaDetalleWeb.aspx.cs">
+      <DependentUpon>CRecetaDetalleWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\Consultas\CRecetaDetalleWeb.aspx.designer.cs">
+      <DependentUpon>CRecetaDetalleWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlPanel\Consultas\CRecetaPacientesWeb.aspx.cs">
       <DependentUpon>CRecetaPacientesWeb.aspx</DependentUpon>
